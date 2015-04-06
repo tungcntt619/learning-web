@@ -9,23 +9,18 @@
         <script src="manager.js" type="text/javascript"></script>
         <title>Login Form</title>
     </head>
-    <body onload="disabledFormItems()">
+    <body onload="toggleForm(true)">
         <div>
             <h1>User Manager</h1>
             <form id="frm" name="f1">
                 <p>
-                    <span>ID:</span>
-                    <input type="text" id="key" name="id" value="" placeholder="ID">
-                    <span id ="idValidate"></span>
-                </p>
-                <p>
                     <span>Name:</span>
-                    <input type="text" id="ten" name="name" value="" placeholder="Name">
+                    <input type="text" id="idname" name="name" value="" placeholder="Name">
                     <span id ="nameValidate"></span>
                 </p>
                 <p>
                     <span>Birthday:</span>
-                    <input type="text" id="sn" name="Birthday" value="" placeholder="Birthday">
+                    <input type="text" id="idBirthday" name="Birthday" value="" placeholder="Birthday">
                      <span id ="birthdayValidate"></span>
                 </p>
                 <p class="submit"><input type="button" id="commit" value="Add" onclick="insertRow()"></p>
