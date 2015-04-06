@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script src="manager.js" type="text/javascript"></script>
+        <title>Login Form</title>
+    </head>
+    <body onload="disabledFormItems()">
+        <div>
+            <h1>User Manager</h1>
+            <form id="frm" name="f1">
+                <p>
+                    <span>ID:</span>
+                    <input type="text" id="key" name="id" value="" placeholder="ID">
+                    <span id ="idValidate"></span>
+                </p>
+                <p>
+                    <span>Name:</span>
+                    <input type="text" id="ten" name="name" value="" placeholder="Name">
+                    <span id ="nameValidate"></span>
+                </p>
+                <p>
+                    <span>Birthday:</span>
+                    <input type="text" id="sn" name="Birthday" value="" placeholder="Birthday">
+                     <span id ="birthdayValidate"></span>
+                </p>
+                <p class="submit"><input type="button" id="commit" value="Add" onclick="insertRow()"></p>
+            </form>
+        </div>
+        
+        <table id="tb1" border="1" cellspacing="0" cellpadding="10" >
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Birthday</td>
+                <td>Delete</td>
+                <td>Edit</td>
+            </tr>
+        </table>
+
+    </body>
+</html>
