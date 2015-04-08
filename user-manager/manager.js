@@ -167,3 +167,18 @@ function page(link, Id) {
     position = Id;
    
 }
+function temp(link, Id) {
+//    current_page = Id;
+//    showRowsInPage();
+//    var element = queryElement('' + Id + '');
+//    var div = queryElement('' + position + '');
+//    if (Id === position) {
+//        element.innerHTML = '<a style="color: red;text-decoration: none; " id="' + position + '" onclick="page(this, ' + position + ')" href="#">page ' + position + '</a>&nbsp&nbsp';
+//    }
+//    else {   
+//        element.innerHTML = '<a style="color: red;text-decoration: none; " id="' + Id + '" onclick="page(this, ' + Id + ')" href="#">page ' + Id + '</a>&nbsp&nbsp';
+//        div.innerHTML = '<a style="text-decoration: none; " id="' + position + '" onclick="page(this, ' + position + ')" href="#">page ' + position + '</a>&nbsp&nbsp';
+//    }
+//    position = Id;
+   
+}
