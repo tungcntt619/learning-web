@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Source/angular.min.js" type="text/javascript"></script>
+        <script src="userManager.js" type="text/javascript"></script>
+        <style>
+            .red{
+                color:red;
+            }
+            .border{
+                border:solid 1px blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-app="sampleapp">
+            <div ng-controller="samplecontoller" ng-init="showData()">
+                <form>
+                    <table>
+                        <tr><td>Name :</td><td><input type="text" ng-model="Name" required/></td></tr>
+                        <tr><td>Age :</td><td><input type="number" ng-model="Age" required/></td></tr>
+                        <tr><td>Sex :</td><td><input type="text" ng-model="Sex" required /></td></tr>
+                        <tr><td><button ng-click="addItem()">Add</button></td></tr>
+                    </table>
+                </form>
+                <table border="1" class="mytable">
+                    <tr>
+                        <td><a href="" ng-click="reverse = !reverse;
+                                   order('Id', reverse)">ID</a></td>
+                        <td><a href="" ng-click="predicate = 'Name';
+                                    reverse = !reverse"">Name</a></td>
+                        <td><a href="" ng-click="reverse = !reverse;
+                                    order('Age', reverse)">Age</a></td>
+                        <td><a href="" ng-click="reverse = !reverse;
+                                    order('Sex', reverse)">Sex</a></td>
+                        <td>Action</td>
+                    </tr>
+                    <tr ng-repeat="item in items| orderBy:predicate:reverse| pagination: curPage * pageSize | limitTo: pageSize">
+                        <td>{{item.Id}}</td>
+                        <td>
+                            <span ng-hide="editMode">{{item.Name}}</span>
+                            <input type="text" ng-show="editMode" ng-model="item.Name" />
+                        </td>
+                        <td>
+                            <span ng-hide="editMode">{{item.Age}}</span>
+                            <input type="number" ng-show="editMode" ng-model="item.Age"  />
+                        </td>
+                        <td>
+                            <span ng-hide="editMode">{{item.Sex}}</span>
+                            <input type="text" ng-show="editMode" ng-model="item.Sex"  />
+                        </td>
+                        <td>
+                            <span><button  ng-hide="editMode" ng-click="editMode = true">Edit</button></span>
+                            <span> <button  ng-show="editMode" ng-click="editMode = false">Save</button></span>
+                            <span><input type="button" value="Delete" ng-click="removeItem(item)"/></span>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <span><button type="button" ng-disabled="curPage === 0"ng-click="curPage = curPage - 1">PREV</button></span> 
+                    <span ng-repeat="n in range()" ng-click="setPage(n)">
+                        <a style="text-decoration: none;" href ="#" ng-class="{red:checked(n)}" >Page{{n + 1}}</a>
+                    </span>
+                    <span><button type="button" ng-disabled="curPage >= items.length / pageSize - 1"ng-click="curPage = curPage + 1">NEXT</button></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
